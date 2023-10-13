@@ -38,10 +38,14 @@ print """
 28. Bank Maspion Indonesia
 29. Bank Mega
 30. Bank Mega Syariah
+31. OVO
+32. DANA
+33. LinkAja
+34. GoPay
+35. ShoopePay
 *Note: Enter number character!!!
 """
 account_bank = [
-"",
 "bca",
 "mandiri",
 "bni",
@@ -66,18 +70,23 @@ account_bank = [
 "ocbc",
 "citibank",
 "artha",
-"hsbc"
+"hsbc",
 "mayapada",
 "sinarmas",
 "maspion",
 "mega",
-"mega_syr"
+"mega_syr",
+"ovo",
+"dana",
+"linkaja",
+"gopay",
+"shopeepay"
 ]
 try:
     raw_bank = input("Your Account Bank: ")
     raw_acc = input("Your Account Number: ")
-    no_acc = raw_acc+1
-    req = requests.post("https://netovas.com/api/cekrek/v1/account-inquiry", data={"account_bank":account_bank[raw_bank],"account_number":raw_acc}).text
+    no_acc = raw_bank-1
+    req = requests.post("https://netovas.com/api/cekrek/v1/account-inquiry", data={"account_bank":account_bank[no_acc],"account_number":raw_acc}).text
     req_arr = json.loads(req)
     print "Status: " + str(req_arr["success"]).upper()
     print "Message: " + str(req_arr["message"]).upper()
