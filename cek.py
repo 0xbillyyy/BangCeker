@@ -38,11 +38,11 @@ print """
 28. Bank Maspion Indonesia
 29. Bank Mega
 30. Bank Mega Syariah
-31. OVO
-32. DANA
-33. LinkAja
-34. GoPay
-35. ShoopePay
+31. OVO (Required 62...)
+32. DANA (Required 62...)
+33. LinkAja (Required 62...)
+34. GoPay (Required 62...)
+35. ShoopePay (Required 62...)
 *Note: Enter number character!!!
 """
 account_bank = [
